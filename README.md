@@ -29,11 +29,19 @@ To check for update just come here and see if I pushed something if yes, just go
 I can recommand `pm2` to keep the software running in the background and restart it if it crash for any reason.
 
 # Roadmap
-- [ ] User login (Discord Oauth?)
-- [ ] User backend
+- [x] User login (Discord Oauth?) (Thanks @Heazher !)
+- [x] User backend
 - [ ] Multi user compatibility
+- [ ] Delete Links
+- [ ] API
+- [ ] Chrome plugin
 - [ ] (Feel free to open an issue if you have any idea!)
 
 # Changelogs:
 ## V1.0.0
 + Initial
+
+## V1.0.1
++ Add Discord Login
++ Add View change once logged in
++ Add Owner Access locked

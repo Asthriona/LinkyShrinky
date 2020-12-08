@@ -1,6 +1,6 @@
 {
     "name": "linkyshrinky",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Link shrinker in nodeJS because rebrandly dont want to set my SSL certificat for some reason :c",
     "main": "app.js",
     "scripts": {
