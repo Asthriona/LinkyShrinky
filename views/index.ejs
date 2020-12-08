@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <%if(!req.user){%>
+    <%if(!req.user || req.user.isAdmin == "false"){%>
         <div class="container">
 
             <h1>Asthriona Link Shrinker (ALS)</h1>

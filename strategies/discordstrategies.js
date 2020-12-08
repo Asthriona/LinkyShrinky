@@ -4,12 +4,10 @@ var Site = require('../models/SiteUsers')
 const Config = require('../config.json');
 
 passport.serializeUser((user, done) => {
-    console.log("Serializing user");
     done(null, user.id)
 })
 
 passport.deserializeUser(async(id, done) => {
-    console.log("Deserializing user");
     var user = await Site.findById(id);
     if (user) done(null, user)
 });
