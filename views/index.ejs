@@ -15,7 +15,7 @@
             <h1>Asthriona Link Shrinker (ALS)</h1>
 
             <p>
-                Sup boys? This is I Asthriona back again with some dank stuff! (Not really...) Just a link shrinker is here. so don't mind it too much, Nothing big, everything is somewhere else. It cannot be used publicly for now that's on my roadmap.
+                Sup boys? This is I, Asthriona back again with some dank stuff! (Not really...) Just a link shrinker is here. so don't mind it too much, Nothing big, everything is somewhere else. It cannot be used publicly for now that's on my roadmap.
             </p>
         </div>
         <%}else{%>
@@ -26,8 +26,10 @@
                 <h3>Shrink me Senpai! UwU</h3>
                 <hr>
                 <form action="/api" method="post" class="my-4 form-inline">
-                    <label for="fullUrl" class="sr-only">URL</label>
-                    <input placeholder="URL" type="url" name="fullUrl" id="fullUrl" class="form-control mr-2 col" required>
+                    <label for="fullUrl" class="sr-only">URL*</label>
+                    <input placeholder="Base URL" type="url" name="fullUrl" id="fullUrl" class="form-control mr-2 col" required>
+                    <label for="slug">Slug</label>
+                    <input placeholder="Slug" type="text" name="slug" id="slug" class="form-control mr-2 col">
                     <button class="button" type="submit">Shrink me Senpai</button>
                 </form>
                 <hr>

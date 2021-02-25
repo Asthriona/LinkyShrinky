@@ -34,8 +34,10 @@ app.disable('x-powered-by')
 const indexRouter = require('./router/index.js')
 const apiRouter = require('./router/api.js')
 const authRouter = require('./router/auth.js')
+const backRouter = require('./router/back')
 
 app.use('/auth', authRouter);
+app.use('/back', backRouter)
 app.use('/api', apiRouter);
 app.use('/', indexRouter);
 
