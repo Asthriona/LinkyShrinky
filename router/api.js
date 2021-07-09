@@ -11,7 +11,6 @@ router.post('/', async(req, res) => {
         ShortUrl.findOne({
             short: slug
         }, async (err, sluggy)=>{
-            console.log(sluggy)
             console.log(err)
             if(!sluggy){
                 const newLink = new ShortUrl({
