@@ -5,63 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asthriona Link Shrinker</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .truncateLongTexts {
+            display: inline-block;
+            max-width: 950px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            vertical-align: top
+        }
+    </style>
 </head>
 
 <body>
-    <%if(!req.user || req.user.isAdmin == "false"){%>
+    <%if(!req.user || req.user.isAdmin=="false" ){%>
         <div class="container">
 
-            <h1>Asthriona Link Shrinker (ALS)</h1>
+            <h1><img src="https://cdn.nishikino.xyz/profectFucker/Static/front/ninjacat.png" height="50px"> Asthriona
+                Link Shrinker (ALS)</h1>
 
             <p>
-                Sup boys? This is I, Asthriona back again with some dank stuff! (Not really...) Just a link shrinker is here. so don't mind it too much, Nothing big, everything is somewhere else. It cannot be used publicly for now that's on my roadmap.
+                Sup boys? This is I, Asthriona back again with some dank stuff! (Not really...) Just a link shrinker is
+                here. so don't mind it too much, Nothing big, everything is somewhere else. It cannot be used publicly
+                for now that's on my roadmap.
             </p>
         </div>
         <%}else{%>
             <div class="container">
+                <div class="row">
+                    <h1>Asthriona Link Shrinker (ALS)</h1>
 
-                <h1>Asthriona Link Shrinker (ALS)</h1>
-
-                <h3>Shrink me Senpai! UwU</h3>
-                <hr>
-                <form action="/api" method="post" class="my-4 form-inline">
-                    <label for="fullUrl" class="sr-only">URL*</label>
-                    <input placeholder="Base URL" type="url" name="fullUrl" id="fullUrl" class="form-control mr-2 col" required>
-                    <label for="slug">Slug</label>
-                    <input placeholder="Slug" type="text" name="slug" id="slug" class="form-control mr-2 col">
-                    <button class="button" type="submit">Shrink me Senpai</button>
-                </form>
-                <hr>
-                <table class="table table-striped table-responsive">
-                    <thead>
-                        <tr>
-                            <th>Full Url</th>
-                            <th>Short Url</th>
-                            <th>Clicks</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% shorts.forEach(short =>{%>
-                            <tr>
-                                <td>
-                                    <a href="<%= short.full %>">
-                                        <%= short.full %>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="<%= short.short %>">
-                                        <%= short.short %>
-                                    </a>
-                                </td>
-                                <td>
-                                    <%= short.clicks %>
-                                </td>
-                            </tr>
-                            <%})%>
-                    </tbody>
-                </table>
-            </div>
+                    <h3>Shrink me Senpai! UwU</h3>
+                    <hr>
+                    <form action="/api" method="post" class="my-4 form-inline">
+                        <label for="fullUrl" class="sr-only">URL*</label>
+                        <input placeholder="Base URL" type="url" name="fullUrl" id="fullUrl"
+                            class="form-control mr-2 col" required>
+                        <label for="slug">Slug</label>
+                        <input placeholder="Slug" type="text" name="slug" id="slug" class="form-control mr-2 col">
+                        <button class="button" type="submit">Shrink me Senpai</button>
+                    </form>
+                    <hr>
+                        <table class="table table-striped table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Full Url</th>
+                                    <th>Short Url</th>
+                                    <th>Clicks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% shorts.forEach(short=>{%>
+                                    <tr>
+                                        <td>
+                                            <a class="truncateLongTexts" alt="<%= short.full %>" href="<%= short.full %>">
+                                                <%= short.full %>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="<%= short.short %>">
+                                                <%= short.short %>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <%= short.clicks %>
+                                        </td>
+                                    </tr>
+                                    <%})%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             <%}%>
 </body>
 
